@@ -42,7 +42,6 @@ export default function Post({ post, postPage }: PostProps) {
 
     if (vote && isUpvote) return
     if (vote === false && !isUpvote) return
-    console.log("dddddddddddddddds:",post)
     await addVote({
       variables: {
         post_id: post?.id,
@@ -85,11 +84,9 @@ export default function Post({ post, postPage }: PostProps) {
 
     const vote = votes?.find(
       (vote) => vote.username === session?.user?.name,
-    )?.upvote
-
+    )?.upvote;
     setVote(vote);
-
-  }, [data]);
+  }, [data])
 
 
   if (!post) {

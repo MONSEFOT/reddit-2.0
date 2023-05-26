@@ -96,8 +96,6 @@ export default function PostBox({ subreddit }: PostBoxProps) {
             username: session?.user?.name,
           },
         })
-
-        console.log('New post added:', newPost)
       }
       // After the post has been added!
       setValue('postBody', '')
